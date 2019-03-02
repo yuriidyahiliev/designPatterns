@@ -12,6 +12,6 @@ public class BuilderTest {
                 .setWindows(5)
                 .build();
 
-        System.out.println(house);
+        System.out.println(house.toString());
     }
 }

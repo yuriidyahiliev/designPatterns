@@ -22,6 +22,16 @@ public class House {
         return address;
     }
 
+    @Override
+    public String toString() {
+        return "House{" +
+                "doors=" + doors +
+                ", windows=" + windows +
+                ", stages=" + stages +
+                ", address='" + address + '\'' +
+                '}';
+    }
+
     public House(Builder houseBuilder) {
         this.address = houseBuilder.address;
         this.doors = houseBuilder.doors;
