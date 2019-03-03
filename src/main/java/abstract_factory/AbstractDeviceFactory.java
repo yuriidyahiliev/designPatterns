@@ -1,7 +1,7 @@
 package abstract_factory;
 
-public class AbstractDeviceFactory {
-    public DeviceFactory createFactory(String typeOfFactory) {
+public class AbstractDeviceFactory implements DeviceFactory {
+    public DeviceFactory create(String typeOfFactory) {
         switch (typeOfFactory) {
             case "Phone": return new PhoneFactory();
             case "Notebook": return new NoteBookFactory();

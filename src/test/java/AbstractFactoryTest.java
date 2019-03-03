@@ -4,15 +4,18 @@ import abstract_factory.NoteBook;
 import abstract_factory.Phone;
 import org.junit.Test;
 
+@SuppressWarnings("unchecked")
 public class AbstractFactoryTest {
 
     @Test
     public void testAbstractFactoryTest() {
-        DeviceFactory phoneFactory = new AbstractDeviceFactory().createFactory("Phone");
-        DeviceFactory noteBookFactory = new AbstractDeviceFactory().createFactory("Notebook");
-        Phone phone = phoneFactory.createPhone("Iphone");
-        NoteBook noteBook = noteBookFactory.createNoteBook("Macbook");
+        DeviceFactory<DeviceFactory> factory = new AbstractDeviceFactory();
+        DeviceFactory<Phone> phoneDeviceFactory = factory.create("Phone");
+        DeviceFactory<NoteBook> noteBookDeviceFactory = factory.create("Notebook");
+        Phone phone = phoneDeviceFactory.create("Iphone");
         phone.ring();
+
+        NoteBook noteBook = noteBookDeviceFactory.create("Macbook");
         noteBook.writeCode();
     }
 }

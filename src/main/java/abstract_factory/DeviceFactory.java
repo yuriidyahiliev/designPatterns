@@ -1,6 +1,5 @@
 package abstract_factory;
 
-public interface DeviceFactory  {
-    Phone createPhone(String typeOfPhone);
-    NoteBook createNoteBook(String typeOfNotebook);
+public interface DeviceFactory<T>  {
+    T create(String typeOfDevice);
 }
